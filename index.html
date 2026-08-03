@@ -1,25 +1,259 @@
 <head><style>body{background:linear-gradient(135deg,#0b3d91,#1e90ff,#87cefa);color:#fff;font-family:Arial,sans-serif;}</style></head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centralizado</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center; /* Horizontal */
-            align-items: center;     /* Vertical */
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-    </style>
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Persona Universe</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#090909;
+    color:white;
+    overflow-x:hidden;
+}
+
+header{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:linear-gradient(135deg,#000,#111,#181818);
+    position:relative;
+}
+
+header::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at center, rgba(255,0,0,.2), transparent 60%);
+    animation:pulse 4s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.15);}
+    100%{transform:scale(1);}
+}
+
+h1{
+    font-size:70px;
+    color:#ff2020;
+    letter-spacing:4px;
+    z-index:2;
+}
+
+header p{
+    margin-top:20px;
+    color:#ccc;
+    z-index:2;
+    font-size:22px;
+}
+
+.btn{
+    margin-top:40px;
+    padding:15px 35px;
+    background:#ff2020;
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    transition:.3s;
+    z-index:2;
+}
+
+.btn:hover{
+    background:white;
+    color:#ff2020;
+}
+
+section{
+    padding:80px 10%;
+}
+
+.titulo{
+    text-align:center;
+    font-size:42px;
+    color:#ff2020;
+    margin-bottom:40px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#151515;
+    padding:25px;
+    border-radius:15px;
+    transition:.4s;
+    border:2px solid transparent;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#ff2020;
+    box-shadow:0 0 20px rgba(255,0,0,.5);
+}
+
+.card h3{
+    color:#3da5ff;
+    margin-bottom:15px;
+}
+
+.historia{
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    align-items:center;
+}
+
+.historia div{
+    flex:1;
+    min-width:280px;
+}
+
+.historia img{
+    width:100%;
+    border-radius:15px;
+}
+
+footer{
+    background:#050505;
+    text-align:center;
+    padding:30px;
+    color:#777;
+}
+
+span{
+    color:#ff2020;
+}
+</style>
+
 </head>
 <body>
 
-    <div>
-        <h1>Persona 3</h1>
-        <p>Desenvolvido pela Atlus e lançado em 2006</p>
-    </div>
+<header>
+
+<h1>PERSONA</h1>
+
+<p>Desperte sua Persona. Enfrente sua sombra.</p>
+
+<a href="#jogos" class="btn">Explorar</a>
+
+</header>
+
+<section id="jogos">
+
+<h2 class="titulo">Jogos Principais</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Persona 3 Reload</h3>
+<p>
+Um grupo de estudantes enfrenta criaturas durante a misteriosa "Hora Sombria".
+Mistura RPG por turnos, exploração e vida escolar.
+</p>
+</div>
+
+<div class="card">
+<h3>Persona 4 Golden</h3>
+<p>
+Investigue uma série de assassinatos ligados ao Midnight Channel enquanto fortalece amizades em Inaba.
+</p>
+</div>
+
+<div class="card">
+<h3>Persona 5 Royal</h3>
+<p>
+Os Phantom Thieves roubam os corações de adultos corruptos explorando o Metaverso.
+Um dos RPGs mais premiados da geração.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="titulo">O Universo Persona</h2>
+
+<div class="historia">
+
+<div>
+
+<p style="line-height:1.8;">
+A franquia <span>Persona</span> combina elementos de RPG,
+simulação de vida escolar e temas psicológicos.
+Cada protagonista desperta um poder conhecido como Persona,
+uma manifestação da força interior do indivíduo.
+Durante o jogo, criar laços com outros personagens fortalece suas habilidades
+e desbloqueia novas possibilidades.
+</p>
+
+</div>
+
+<div>
+
+<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900" alt="Imagem ilustrativa">
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="titulo">Características</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🎭 Personas</h3>
+<p>Invocações baseadas na personalidade e no subconsciente.</p>
+</div>
+
+<div class="card">
+<h3>📖 História</h3>
+<p>Enredos profundos com temas sociais, psicológicos e filosóficos.</p>
+</div>
+
+<div class="card">
+<h3>⚔️ Combate</h3>
+<p>Sistema estratégico por turnos explorando fraquezas dos inimigos.</p>
+</div>
+
+<div class="card">
+<h3>❤️ Social Links</h3>
+<p>Construir amizades fortalece suas Personas e desbloqueia novas habilidades.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>Persona Fan Site</h2>
+
+<p>Desenvolvido em HTML + CSS</p>
+
+</footer>
 
 </body>
+</html>
