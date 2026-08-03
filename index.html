@@ -1,80 +1,106 @@
 <head><style>body{background:linear-gradient(135deg,#0b3d91,#1e90ff,#87cefa);color:#fff;font-family:Arial,sans-serif;}</style></head>
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Persona Universe</title>
+<title>Persona 3 - Fan Site</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#090909;
+    background:#07192e;
     color:white;
-    overflow-x:hidden;
+    font-family:Poppins,sans-serif;
 }
 
 header{
     height:100vh;
+    background:
+    linear-gradient(rgba(0,20,50,.75),rgba(0,10,30,.85)),
+    url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1600") center/cover;
     display:flex;
     justify-content:center;
     align-items:center;
-    flex-direction:column;
-    background:linear-gradient(135deg,#000,#111,#181818);
-    position:relative;
+    text-align:center;
+    padding:20px;
 }
 
-header::before{
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:
-    radial-gradient(circle at center, rgba(255,0,0,.2), transparent 60%);
-    animation:pulse 4s infinite;
+.hero{
+    animation:fade 1.2s;
 }
 
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.15);}
-    100%{transform:scale(1);}
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 h1{
+    font-family:Orbitron;
     font-size:70px;
-    color:#ff2020;
-    letter-spacing:4px;
-    z-index:2;
+    color:#7ed8ff;
+    text-shadow:0 0 20px #2ec4ff;
 }
 
-header p{
+.hero p{
     margin-top:20px;
-    color:#ccc;
-    z-index:2;
     font-size:22px;
+    color:#ddd;
 }
 
 .btn{
-    margin-top:40px;
+    display:inline-block;
+    margin-top:35px;
     padding:15px 35px;
-    background:#ff2020;
+    background:#26b8ff;
     color:white;
     text-decoration:none;
     border-radius:40px;
     transition:.3s;
-    z-index:2;
+    font-weight:bold;
 }
 
 .btn:hover{
     background:white;
-    color:#ff2020;
+    color:#0b4e77;
+}
+
+nav{
+    background:#02101d;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#67d8ff;
 }
 
 section{
@@ -83,62 +109,62 @@ section{
 
 .titulo{
     text-align:center;
+    color:#79dbff;
     font-size:42px;
-    color:#ff2020;
     margin-bottom:40px;
+    font-family:Orbitron;
+}
+
+.historia{
+    line-height:1.9;
+    font-size:18px;
+    max-width:1000px;
+    margin:auto;
 }
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
 }
 
 .card{
-    background:#151515;
-    padding:25px;
+    background:#102640;
+    border:2px solid #2aa7ff;
     border-radius:15px;
-    transition:.4s;
-    border:2px solid transparent;
+    padding:25px;
+    transition:.35s;
 }
 
 .card:hover{
     transform:translateY(-10px);
-    border-color:#ff2020;
-    box-shadow:0 0 20px rgba(255,0,0,.5);
+    box-shadow:0 0 20px #35b9ff;
 }
 
 .card h3{
-    color:#3da5ff;
+    color:#8be1ff;
     margin-bottom:15px;
 }
 
-.historia{
-    display:flex;
-    flex-wrap:wrap;
-    gap:40px;
-    align-items:center;
+.card p{
+    color:#ddd;
 }
 
-.historia div{
-    flex:1;
-    min-width:280px;
+.lista{
+    max-width:900px;
+    margin:auto;
 }
 
-.historia img{
-    width:100%;
-    border-radius:15px;
+.lista li{
+    margin:20px 0;
+    font-size:18px;
 }
 
 footer{
-    background:#050505;
+    background:#02101d;
     text-align:center;
     padding:30px;
-    color:#777;
-}
-
-span{
-    color:#ff2020;
+    color:#aaa;
 }
 </style>
 
@@ -147,101 +173,125 @@ span{
 
 <header>
 
-<h1>PERSONA</h1>
+<div class="hero">
 
-<p>Desperte sua Persona. Enfrente sua sombra.</p>
+<h1>PERSONA 3</h1>
 
-<a href="#jogos" class="btn">Explorar</a>
+<p>Encare a Hora Sombria e descubra o significado da vida.</p>
+
+<a class="btn" href="#historia">Começar</a>
+
+</div>
 
 </header>
 
-<section id="jogos">
+<nav>
+<a href="#historia">História</a>
+<a href="#personagens">Personagens</a>
+<a href="#curiosidades">Curiosidades</a>
+</nav>
 
-<h2 class="titulo">Jogos Principais</h2>
+<section id="historia">
 
-<div class="cards">
-
-<div class="card">
-<h3>Persona 3 Reload</h3>
-<p>
-Um grupo de estudantes enfrenta criaturas durante a misteriosa "Hora Sombria".
-Mistura RPG por turnos, exploração e vida escolar.
-</p>
-</div>
-
-<div class="card">
-<h3>Persona 4 Golden</h3>
-<p>
-Investigue uma série de assassinatos ligados ao Midnight Channel enquanto fortalece amizades em Inaba.
-</p>
-</div>
-
-<div class="card">
-<h3>Persona 5 Royal</h3>
-<p>
-Os Phantom Thieves roubam os corações de adultos corruptos explorando o Metaverso.
-Um dos RPGs mais premiados da geração.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="titulo">O Universo Persona</h2>
+<h2 class="titulo">A História</h2>
 
 <div class="historia">
 
-<div>
+<p>
+<b>Persona 3</b> acompanha um estudante que retorna à cidade de Iwatodai e passa a viver no dormitório da escola Gekkoukan.
+Pouco depois de sua chegada, ele descobre a existência da misteriosa <b>Hora Sombria</b>, um período escondido entre um dia e outro, quando a maioria das pessoas fica presa em caixões e criaturas chamadas <b>Shadows</b> surgem para atacar.
+</p>
 
-<p style="line-height:1.8;">
-A franquia <span>Persona</span> combina elementos de RPG,
-simulação de vida escolar e temas psicológicos.
-Cada protagonista desperta um poder conhecido como Persona,
-uma manifestação da força interior do indivíduo.
-Durante o jogo, criar laços com outros personagens fortalece suas habilidades
-e desbloqueia novas possibilidades.
+<br>
+
+<p>
+O protagonista desperta o poder de invocar uma <b>Persona</b>, uma manifestação de sua força interior.
+Ele se junta ao grupo <b>SEES (Specialized Extracurricular Execution Squad)</b>, formado por estudantes que também possuem esse poder.
+Juntos, eles exploram a gigantesca torre chamada <b>Tartarus</b>, enfrentando monstros e tentando descobrir a origem da Hora Sombria.
+</p>
+
+<br>
+
+<p>
+Durante a aventura, os personagens enfrentam temas como amizade, perda, coragem e o significado da vida.
+O jogo é conhecido por seu tom mais sério e emocional em comparação aos outros títulos da série Persona.
 </p>
 
 </div>
 
-<div>
+</section>
 
-<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900" alt="Imagem ilustrativa">
+<section id="personagens">
 
+<h2 class="titulo">Personagens Principais</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Makoto Yuki (Protagonista)</h3>
+<p>
+O protagonista da história. Silencioso e calmo, desperta um enorme potencial para utilizar múltiplas Personas.
+</p>
+</div>
+
+<div class="card">
+<h3>Yukari Takeba</h3>
+<p>
+Uma das primeiras integrantes da SEES. Utiliza arco e habilidades de vento. Busca descobrir a verdade sobre seu pai.
+</p>
+</div>
+
+<div class="card">
+<h3>Junpei Iori</h3>
+<p>
+Melhor amigo do protagonista. É descontraído, divertido e luta utilizando espadas de duas mãos.
+</p>
+</div>
+
+<div class="card">
+<h3>Mitsuru Kirijo</h3>
+<p>
+Presidente do conselho estudantil. Inteligente, elegante e líder da SEES durante boa parte da história.
+</p>
+</div>
+
+<div class="card">
+<h3>Akihiko Sanada</h3>
+<p>
+Boxeador talentoso que domina ataques elétricos. Está sempre buscando ficar mais forte.
+</p>
+</div>
+
+<div class="card">
+<h3>Aigis</h3>
+<p>
+Uma androide criada para combater Shadows. Torna-se uma das personagens mais importantes da trama.
+</p>
 </div>
 
 </div>
 
 </section>
 
-<section>
+<section id="curiosidades">
 
-<h2 class="titulo">Características</h2>
+<h2 class="titulo">Curiosidades</h2>
 
-<div class="cards">
+<div class="lista">
 
-<div class="card">
-<h3>🎭 Personas</h3>
-<p>Invocações baseadas na personalidade e no subconsciente.</p>
-</div>
+<ul>
 
-<div class="card">
-<h3>📖 História</h3>
-<p>Enredos profundos com temas sociais, psicológicos e filosóficos.</p>
-</div>
+<li>🌙 Persona 3 foi o primeiro jogo da série a introduzir o sistema de calendário e vida escolar.</li>
 
-<div class="card">
-<h3>⚔️ Combate</h3>
-<p>Sistema estratégico por turnos explorando fraquezas dos inimigos.</p>
-</div>
+<li>🗼 Tartarus muda de aparência conforme o jogador avança na história.</li>
 
-<div class="card">
-<h3>❤️ Social Links</h3>
-<p>Construir amizades fortalece suas Personas e desbloqueia novas habilidades.</p>
-</div>
+<li>🎭 As Personas são inspiradas em figuras históricas, mitológicas e literárias.</li>
+
+<li>🎵 A trilha sonora mistura hip-hop, rock e música eletrônica, sendo uma das mais famosas da franquia.</li>
+
+<li>🔵 Em 2024 foi lançado <b>Persona 3 Reload</b>, um remake completo com gráficos modernos e diversas melhorias.</li>
+
+</ul>
 
 </div>
 
@@ -249,9 +299,9 @@ e desbloqueia novas possibilidades.
 
 <footer>
 
-<h2>Persona Fan Site</h2>
+<h2>Persona 3 Fan Site</h2>
 
-<p>Desenvolvido em HTML + CSS</p>
+<p>Este é um site criado por fãs, sem afiliação oficial com a ATLUS ou a SEGA.</p>
 
 </footer>
 
